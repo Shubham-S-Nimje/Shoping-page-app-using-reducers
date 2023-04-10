@@ -1,21 +1,22 @@
 import { createSlice, configureStore } from "@reduxjs/toolkit";
+import cartSlice from "./cart-slice";
 
-const initialCartState = { iscartvisible: false }
+const initialCartdState = { iscartdvisible: false }
 
-const CartSlice = createSlice({
-    name: 'cartstatechange',
-    initialState: initialCartState,
+const CartdSlice = createSlice({
+    name: 'cartdstatechange',
+    initialState: initialCartdState,
     reducers : {
-        Cart(state) {
-            state.iscartvisible = !state.iscartvisible;
+        Cartd(state) {
+            state.iscartdvisible = !state.iscartdvisible;
         }
     }
 });
 
 const store = configureStore({
-    reducer : { cart : CartSlice.reducer },
+    reducer : { cartd : CartdSlice.reducer, cart: cartSlice.reducer },
 });
 
-export const cartActions = CartSlice.actions;
+export const cartdActions = CartdSlice.actions;
 
 export default store;
