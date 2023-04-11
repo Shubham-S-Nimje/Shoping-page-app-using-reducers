@@ -3,13 +3,10 @@ import Card from '../UI/Card';
 import classes from './Cart.module.css';
 import CartItem from './CartItem';
 
-const Cart = (props) => {
-  const iscartdvisible = useSelector(state => state.cartd.iscartdvisible)
+const Cart = () => {
   const CartItems = useSelector(state => state.cart.items)
 
   return (
-    <>
-      {iscartdvisible && (
         <Card className={classes.cart}>
           <h2>Your Shopping Cart</h2>
           <ul>
@@ -27,9 +24,7 @@ const Cart = (props) => {
             ))}
           </ul>
         </Card>
-      )}
-    </>
-  );
+  )
 };
 
 export default Cart;
